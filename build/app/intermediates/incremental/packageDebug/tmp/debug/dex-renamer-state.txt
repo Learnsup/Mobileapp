@@ -1,0 +1,4 @@
+#Tue Sep 29 16:41:10 ICT 2020
+base.0=D\:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

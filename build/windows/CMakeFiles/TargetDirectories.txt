@@ -1,0 +1,10 @@
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/CMakeFiles/INSTALL.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/CMakeFiles/ALL_BUILD.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/CMakeFiles/ZERO_CHECK.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/flutter/CMakeFiles/flutter_wrapper_app.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/flutter/CMakeFiles/flutter_assemble.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/flutter/CMakeFiles/INSTALL.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/CMakeFiles/u_w_u.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/CMakeFiles/INSTALL.dir
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/CMakeFiles/ALL_BUILD.dir
