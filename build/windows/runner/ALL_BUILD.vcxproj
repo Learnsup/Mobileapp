@@ -19,7 +19,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{33B6E0B1-CB6F-3445-BBDA-4DCA9D7B7F6C}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>ALL_BUILD</ProjectName>
@@ -86,6 +86,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\windows\runner\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows -BD:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows --check-stamp-file D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/CMakeFiles/generate.stamp

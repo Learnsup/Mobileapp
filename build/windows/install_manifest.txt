@@ -7,6 +7,11 @@ D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_asse
 D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/assets/cookiecream.jpg
 D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/assets/cookiemint.jpg
 D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/assets/cookievan.jpg
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Poppins-Bold.ttf
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Poppins-ExtraBold.ttf
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Poppins-Light.ttf
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Poppins-Medium.ttf
+D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Poppins-Regular.ttf
 D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
 D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
 D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin

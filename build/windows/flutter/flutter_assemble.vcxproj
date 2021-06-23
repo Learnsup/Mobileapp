@@ -19,7 +19,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0C798985-8DF7-30C3-B9C2-F0331088C309}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>flutter_assemble</ProjectName>
@@ -88,7 +88,7 @@
     <CustomBuild Include="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\CMakeFiles\71799515480bb27c2a27f6b91c2aa0b4\flutter_windows.dll.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_windows.dll, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_export.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_windows.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_messenger.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_plugin_registrar.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc, _phony_</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT="C:\src\flutter" PROJECT_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u" FLUTTER_ROOT="C:\src\flutter" FLUTTER_EPHEMERAL_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\windows\flutter\ephemeral" PROJECT_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u" FLUTTER_TARGET="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\lib\main.dart" DART_DEFINES="flutter.inspector.structuredErrors%3Dtrue" DART_OBFUSCATION="false" TRACK_WIDGET_CREATION="true" TREE_SHAKE_ICONS="false" PACKAGE_CONFIG=".packages" C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\windows\flutter\ephemeral PROJECT_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u FLUTTER_TARGET=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\lib\main.dart DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -102,7 +102,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Generating D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_windows.dll, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_export.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_windows.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_messenger.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_plugin_registrar.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc, _phony_</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT="C:\src\flutter" PROJECT_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u" FLUTTER_ROOT="C:\src\flutter" FLUTTER_EPHEMERAL_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\windows\flutter\ephemeral" PROJECT_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u" FLUTTER_TARGET="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\lib\main.dart" DART_DEFINES="flutter.inspector.structuredErrors%3Dtrue" DART_OBFUSCATION="false" TRACK_WIDGET_CREATION="true" TREE_SHAKE_ICONS="false" PACKAGE_CONFIG=".packages" C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Profile
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\windows\flutter\ephemeral PROJECT_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u FLUTTER_TARGET=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\lib\main.dart DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Profile
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -116,7 +116,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_windows.dll, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_export.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_windows.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_messenger.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/flutter_plugin_registrar.h, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc, D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc, _phony_</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT="C:\src\flutter" PROJECT_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u" FLUTTER_ROOT="C:\src\flutter" FLUTTER_EPHEMERAL_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\windows\flutter\ephemeral" PROJECT_DIR="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u" FLUTTER_TARGET="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\lib\main.dart" DART_DEFINES="flutter.inspector.structuredErrors%3Dtrue" DART_OBFUSCATION="false" TRACK_WIDGET_CREATION="true" TREE_SHAKE_ICONS="false" PACKAGE_CONFIG=".packages" C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Release
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\windows\flutter\ephemeral PROJECT_DIR=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u FLUTTER_TARGET=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\lib\main.dart DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Release
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -172,6 +172,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\windows\flutter\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows/flutter/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/UwU/Code_is_gold/Flu_tt_er/u_w_u/windows -BD:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows --check-stamp-file D:/UwU/Code_is_gold/Flu_tt_er/u_w_u/build/windows/flutter/CMakeFiles/generate.stamp
@@ -214,7 +215,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\flutter\CMakeFiles\flutter_assemble" />
+    <None Include="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\flutter\CMakeFiles\flutter_assemble">
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\ZERO_CHECK.vcxproj">

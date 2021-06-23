@@ -1,7 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <ProjectOutputs>D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\x64\Debug\ZERO_CHECK;D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\x64\Debug\ALL_BUILD;D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\x64\Debug\INSTALL</ProjectOutputs>
-  <ContentFiles></ContentFiles>
-  <SatelliteDlls></SatelliteDlls>
-  <NonRecipeFileRefs></NonRecipeFileRefs>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\flutter\x64\Debug\flutter_assemble</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\runner\Debug\u_w_u.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\x64\Debug\ALL_BUILD</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\x64\Debug\INSTALL</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
 </Project>

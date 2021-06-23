@@ -1,2 +1,0 @@
-D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\flutter\Debug\flutter_wrapper_plugin.pdb
-D:\UwU\Code_is_gold\Flu_tt_er\u_w_u\build\windows\flutter\flutter_wrapper_plugin.dir\Debug\flutter_wrapper_plugin.pdb

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "208148483393",
+    "firebase_url": "https://khkt-hehe.firebaseio.com",
+    "project_id": "khkt-hehe",
+    "storage_bucket": "khkt-hehe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208148483393:android:a8847c3d0cbae8230965c0",
+        "android_client_info": {
+          "package_name": "idk.bro.u_w_u"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208148483393-ta8jc6vl0bilrdms0n3pv26kl2f6qu86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG8xh5Tz-eixafI1EGOAUwTvtKpFmzH2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208148483393-ta8jc6vl0bilrdms0n3pv26kl2f6qu86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

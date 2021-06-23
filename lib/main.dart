@@ -1,19 +1,32 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
-import 'home_page.dart';
+import 'page/login_screen.dart';
+import 'page/consts/light_colors.dart';
+import 'package:flutter/services.dart';
 
-int posIndex = 0;
-
-void main() => runApp(MyApp());
+void main() {
+  return runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  // Root
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
-      title: 'Flutter Login UI',
-      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        textTheme: Theme
+            .of(context)
+            .textTheme
+            .apply(
+            bodyColor: LightColors.kDarkBlue,
+            displayColor: LightColors.kDarkBlue,
+            fontFamily: 'Poppins'
+        ),
+      ),
       home: LoginScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
