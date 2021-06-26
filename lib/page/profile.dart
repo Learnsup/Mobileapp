@@ -1,3 +1,4 @@
+import 'package:draw_graph/models/feature.dart';
 import 'package:flutter/material.dart';
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 import 'schedule.dart';
@@ -8,6 +9,10 @@ import 'widgets/slide_left.dart';
 import 'activities.dart';
 import 'consts/light_colors.dart';
 import 'dart:math' as math;
+import 'package:draw_graph/draw_graph.dart';
+import 'subpages/history.dart';
+
+final Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
 class Profile extends StatefulWidget {
   @override
@@ -15,11 +20,24 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  final List<Feature> features = [
+    Feature(
+      title: "Efficiency",
+      color: Colors.blue,
+      data: [0.7, 0.9, 0.5, 0.4, 0.7, 0.7, 0.8],
+    ),
+    Feature(
+      title: "Tasks done",
+      color: Colors.pink,
+      data: [1, 0.8, 0.6, 0.7, 0.3, 0.8, 0.9],
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: LightColors.kLightYellow,
-      resizeToAvoidBottomInset : false,
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: TitledBottomNavigationBar(
           currentIndex: 2,
           onTap: (index) {
@@ -39,22 +57,26 @@ class _ProfileState extends State<Profile> {
             }
           },
           items: [
-            TitledNavigationBarItem(title: Text('Trang chủ'), icon: Icons.home),
             TitledNavigationBarItem(
-                title: Text('Lịch trình'), icon: Icons.schedule),
+                title: Text(
+                  'Homepage',
+                  style: TextStyle(fontSize: 12),
+                ),
+                icon: Icons.home),
             TitledNavigationBarItem(
-                title: Text('Hồ sơ'), icon: Icons.person_outline),
+                title: Text('Schedule'), icon: Icons.schedule),
             TitledNavigationBarItem(
-                title: Text('Cài đặt'), icon: Icons.settings),
+                title: Text('Profile'), icon: Icons.person_outline),
+            TitledNavigationBarItem(
+                title: Text('Settings'), icon: Icons.settings),
           ]),
-      floatingActionButton: Padding (
+      floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 5.0),
         child: FloatingActionButton(
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => Activities()),
+              MaterialPageRoute(builder: (context) => Activities()),
             );
           },
           backgroundColor: Color(0xFFF17532),
@@ -73,7 +95,8 @@ class _ProfileState extends State<Profile> {
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.greenAccent, //                   <--- border color
+                    color: Colors.greenAccent,
+                    //                   <--- border color
                     width: 5.0,
                   ),
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -89,7 +112,7 @@ class _ProfileState extends State<Profile> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Thông tin cá nhân",
+                        "Personal information",
                         style: TextStyle(fontSize: 24),
                       ),
                     ],
@@ -98,7 +121,7 @@ class _ProfileState extends State<Profile> {
               ),
               SizedBox(height: 30.0),
               Text(
-                "Tuổi",
+                "Age",
                 style: TextStyle(fontSize: 18),
               ),
               SizedBox(
@@ -112,14 +135,14 @@ class _ProfileState extends State<Profile> {
                 height: 16,
               ),
               Text(
-                "Địa chỉ",
+                "Address",
                 style: TextStyle(fontSize: 18),
               ),
               SizedBox(
                 height: 4,
               ),
               Text(
-                "Chịu",
+                "Idk bro",
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -139,7 +162,7 @@ class _ProfileState extends State<Profile> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Lịch sử",
+                      "History",
                       style: TextStyle(fontSize: 24),
                     ),
                   ],
@@ -166,8 +189,8 @@ class _ProfileState extends State<Profile> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "23 - 6 - 2022",
-                        style: TextStyle(fontSize: 20),
+                        "17 / 6 / 2022 - 23 / 6 / 2022 \n (Week 3)",
+                        style: TextStyle(fontSize: 18),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -175,70 +198,32 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
               SizedBox(
-                height: 9,
+                height: 50,
               ),
-              Text(
-                " - Bạn đã hoàn thành 100% công việc đã dự định với hiệu suất hiệu quả : ",
-                style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepOrange),
-              ),
-              SizedBox(
-                height: 7,
-              ),
-              Text(
-                "     Vẽ / Đọc sách / Thiết kế",
-                style: TextStyle(fontSize: 17),
-              ),
-              SizedBox(
-                height: 22,
-              ),
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.red, //                   <--- border color
-                    width: 1.5,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => History()));
+                },
+                child: LineGraph(
+                  features: features,
+                  size: Size(620, 400),
+                  labelX: [
+                    'Day 1',
+                    'Day 2',
+                    'Day 3',
+                    'Day 4',
+                    'Day 5',
+                    'Day 6',
+                    'Day 7'
+                  ],
+                  labelY: ['20%', '40%', '60%', '80%', '100%'],
+                  showDescription: true,
+                  graphColor: Colors.black,
+                  graphOpacity: 0.2,
+                  verticalFeatureDirection: true,
+                  descriptionHeight: 180,
                 ),
-                child: ListTile(
-                  title: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "22 - 6 - 2022",
-                        style: TextStyle(fontSize: 20),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 9,
-              ),
-              Text(
-                " - Bạn đã hoàn thành 75% công việc với hiệu suất trung bình",
-                style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepOrange),
-              ),
-              SizedBox(
-                height: 7,
-              ),
-              Text(
-                "     Làm BTVN / Học tập / Xây dựng app",
-                style: TextStyle(fontSize: 17),
-              ),SizedBox(
-                height: 7,
-              ),
-              Text(
-                "      Bỏ qua : Ngủ",
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
               Divider(
                 color: Colors.grey,
@@ -251,8 +236,7 @@ class _ProfileState extends State<Profile> {
   }
 }
 
-final String url =
-    "https://i.imgur.com/SLtTVKr.png";
+final String url = "https://i.imgur.com/SLtTVKr.png";
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -268,7 +252,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             color: LightColors.kLavender,
             boxShadow: [
               BoxShadow(
-                  color: Colors.blueAccent, blurRadius: 40, offset: Offset(0, 0))
+                  color: Colors.blueAccent,
+                  blurRadius: 40,
+                  offset: Offset(0, 0))
             ]),
         child: Column(
           children: <Widget>[
@@ -276,10 +262,10 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "\n Hồ sơ cá nhân",
+                  "\n Profile",
                   style: TextStyle(
                       color: Colors.blueAccent,
-                      fontSize: 26,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
               ],
@@ -303,7 +289,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                       height: 16,
                     ),
                     Text(
-                      "Phạm Nguyên Anh",
+                      "Jesus Christ",
                       style: TextStyle(color: Colors.black, fontSize: 20),
                     )
                   ],
@@ -312,17 +298,23 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   children: <Widget>[
                     SizedBox(height: 27),
                     Text(
-                      "Khối",
-                      style: TextStyle(color: Colors.black , fontSize: 18 , fontWeight: FontWeight.bold),
+                      "Grade",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "10",
                       style: TextStyle(fontSize: 26, color: Colors.black),
                     ),
-                    SizedBox(height: 27),
+                    SizedBox(height: 10),
                     Text(
-                      "Lớp",
-                      style: TextStyle(color: Colors.black , fontSize: 18 , fontWeight: FontWeight.bold),
+                      "Class",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "A5",
@@ -332,27 +324,24 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 8,
-            ),
             Align(
               alignment: Alignment.bottomRight,
               child: GestureDetector(
-                onTap: () {
-                  print("//TODO: button clicked");
-                },
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 13, 50, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 13, 32, 0),
                   child: Transform.rotate(
-                    angle: (math.pi * 0.13),
+                    angle: (math.pi * 0),
                     child: Container(
                       width: 110,
                       height: 32,
                       child: Center(
-                        child: Text("Chỉnh sửa" , style: TextStyle(fontSize: 16, color: Colors.indigo),),
+                        child: Text(
+                          "Edit",
+                          style: TextStyle(fontSize: 16, color: Colors.indigo),
+                        ),
                       ),
                       decoration: BoxDecoration(
-                          color: Colors.white ,
+                          color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(16)),
                           boxShadow: [
                             BoxShadow(color: Colors.black12, blurRadius: 20)
@@ -374,7 +363,7 @@ class MyClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     Path p = Path();
 
-    p.lineTo(0, size.height - 90);
+    p.lineTo(0, size.height - 60);
     p.lineTo(size.width, size.height + 80);
 
     p.lineTo(size.width, 0);
@@ -389,4 +378,3 @@ class MyClipper extends CustomClipper<Path> {
     return true;
   }
 }
-

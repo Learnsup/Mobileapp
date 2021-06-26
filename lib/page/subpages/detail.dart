@@ -17,14 +17,14 @@ class CookieDetail extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
-        title: Text('Lựa chọn',
+        title: Text('Project',
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
                 color: Color(0xFF545D68))),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.emoji_food_beverage, color: Color(0xFF545D68)),
+            icon: Icon(Icons.work, color: Color(0xFF545D68)),
             onPressed: () {},
           ),
         ],
@@ -36,7 +36,7 @@ class CookieDetail extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 20.0),
               child: Text(
-                  'Hoạt động',
+                  'Activity',
                   style: TextStyle(
                       fontFamily: 'Varela',
                       fontSize: 42.0,
@@ -74,7 +74,7 @@ class CookieDetail extends StatelessWidget {
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width - 50.0,
-                child: Text('Insert description danh ngôn thống kê this that\nInsert description danh ngôn thống kê this that\nInsert description danh ngôn thống kê this that',
+                child: Text('Insert description this that\nInsert description this that\nInsert description this that',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'Varela',
@@ -93,7 +93,7 @@ class CookieDetail extends StatelessWidget {
                         color: Color(0xFFF17532)
                     ),
                     child: Center(
-                        child: Text('Bạn đã hoàn thành công việc này',
+                        child: Text('You have perfectly done this task',
                           style: TextStyle(
                               fontFamily: 'Varela',
                               fontSize: 17.0,

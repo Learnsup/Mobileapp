@@ -38,13 +38,13 @@ class _SettingsState extends State<Settings> {
             },
             items: [
               TitledNavigationBarItem(
-                  title: Text('Trang chủ'), icon: Icons.home),
+                  title: Text('Homepage', style: TextStyle(fontSize: 12),), icon: Icons.home),
               TitledNavigationBarItem(
-                  title: Text('Lịch trình'), icon: Icons.schedule),
+                  title: Text('Schedule'), icon: Icons.schedule),
               TitledNavigationBarItem(
-                  title: Text('Hồ sơ'), icon: Icons.person_outline),
+                  title: Text('Profile'), icon: Icons.person_outline),
               TitledNavigationBarItem(
-                  title: Text('Cài đặt'), icon: Icons.settings),
+                  title: Text('Settings'), icon: Icons.settings),
             ]),
         floatingActionButton: Padding(
           padding: const EdgeInsets.only(bottom: 5.0),
@@ -65,36 +65,36 @@ class _SettingsState extends State<Settings> {
             SettingsSection(
               tiles: [
                 SettingsTile(
-                  title: 'Thông tin về ứng dụng',
+                  title: 'App infomation',
                   leading: Icon(Icons.info_outline),
                   onPressed: (BuildContext context) {},
                 ),
               ],
             ),
             SettingsSection(
-              title: "Thiết lập ứng dụng",
+              title: "App settings",
               tiles: [
                 SettingsTile(
-                  title: 'Ngôn ngữ',
-                  subtitle: 'Tiếng Việt',
+                  title: 'Language',
+                  subtitle: 'English',
                   leading: Icon(Icons.language),
                   onPressed: (BuildContext context) {},
                 ),
                 SettingsTile(
                   title: 'Theme',
                   leading: Icon(Icons.color_lens_outlined),
-                  subtitle: 'Mặc định hệ thống',
+                  subtitle: 'System default',
                 ),
                 SettingsTile(
-                  title: 'Âm thanh',
+                  title: 'Sounds',
                   leading: Icon(Icons.music_note),
                 ),
                 SettingsTile(
-                  title: 'Thông báo',
+                  title: 'Notifications',
                   leading: Icon(Icons.notifications),
                 ),
                 SettingsTile(
-                  title: 'Nâng cao',
+                  title: 'Advance',
                   leading: Icon(Icons.settings_applications_outlined),
                 ),
               ],
@@ -103,21 +103,21 @@ class _SettingsState extends State<Settings> {
               title: "Bảo mật",
               tiles: [
                 SettingsTile(
-                  title: 'Cài đặt tài khoản',
+                  title: 'Accounts settings',
                   leading: Icon(Icons.account_box_rounded),
                 ),
                 SettingsTile.switchTile(
-                  title: 'Khóa ứng dụng',
+                  title: 'App lock',
                   leading: Icon(Icons.lock), switchValue: false, onToggle: (bool value) {  },
                 ),
               ],
             ),
             SettingsSection(
-              title: "Mua cho chúng tôi 1 cái skin Sylas",
+              title: "Buy us a Sylas skin",
               tiles: [
                 SettingsTile.switchTile(
-                  title: 'Nâng cấp bản premium',
-                  subtitle: 'Nhận được lòng biết ơn của chúng tôi',
+                  title: 'Upgrade to premium',
+                  subtitle: 'U have my attention',
                   leading: Icon(Icons.lock, color: Colors.redAccent,), switchValue: true, onToggle: (bool value) {  },
                 ),
               ],

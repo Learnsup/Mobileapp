@@ -1,11 +1,19 @@
 [
     {
-        "merged": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\build\\app\\intermediates\\res\\merged\\debug\\drawable_app_icon.png.flat",
+        "source": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\android\\app\\src\\main\\res\\drawable\\app_icon.png"
     },
     {
         "merged": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_launch_background.xml.flat",
+        "source": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
     },
     {
         "merged": "D:\\UwU\\Code_is_gold\\Flu_tt_er\\u_w_u\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",

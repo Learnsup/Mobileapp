@@ -21,29 +21,29 @@ class Done extends StatelessWidget {
                 childAspectRatio: 0.8,
                 children: <Widget>[
                   _buildCard(
-                      'Học tập',
-                      '14:30 hôm qua - trong 1h',
+                      'Learn',
+                      '14:30 yesterday - in 1h',
                       'https://cdn.iconscout.com/icon/free/png-256/book-and-pen-2169511-1821967.png',
                       false,
                       false,
                       context),
                   _buildCard(
-                      'Thiết kế',
-                      '19:00 hôm qua - trong 1h',
+                      'Design',
+                      '19:00 yesterday - in 1h',
                       'https://assets.website-files.com/5ac23a0151483308647e899f/5ac8fa53e4871d25eb64ce75_logo-designing%20icon.png',
                       true,
                       false,
                       context),
                   _buildCard(
-                      'Đọc sách',
-                      '7:30 - trong 1h30p',
+                      'Reading books',
+                      '7:30 - in 1h30p',
                       'https://www.nicepng.com/png/detail/233-2331555_reading-book-vector-icon.png',
                       false,
                       true,
                       context),
                   _buildCard(
-                      'Vẽ',
-                      '9h30 - trong 30p',
+                      'Draw',
+                      '9h30 - in 30p',
                       'https://cdn4.iconfinder.com/data/icons/education-filled-line-3/550/education-30-512.png',
                       false,
                       false,
@@ -103,7 +103,7 @@ class Done extends StatelessWidget {
                       style: TextStyle(
                           color: Color(0xFFCC8053),
                           fontFamily: 'Varela',
-                          fontSize: 13.0)),
+                          fontSize: 12.0)),
                   Text(name,
                       style: TextStyle(
                           color: Color(0xFF575E67),
@@ -119,7 +119,7 @@ class Done extends StatelessWidget {
                           children: [
                             Icon(Icons.details,
                                 color: Color(0xFFD17E50), size: 12.0),
-                            Text('Xem chi tiết',
+                            Text('Detail',
                                 style: TextStyle(
                                     fontFamily: 'Varela',
                                     color: Color(0xFFD17E50),

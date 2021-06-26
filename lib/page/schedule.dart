@@ -49,13 +49,13 @@ class Schedule extends StatelessWidget {
             }
           },
           items: [
-            TitledNavigationBarItem(title: Text('Trang chủ'), icon: Icons.home),
+            TitledNavigationBarItem(title: Text('Homepage', style: TextStyle(fontSize: 12),), icon: Icons.home),
             TitledNavigationBarItem(
-                title: Text('Lịch trình'), icon: Icons.schedule),
+                title: Text('Schedule'), icon: Icons.schedule),
             TitledNavigationBarItem(
-                title: Text('Hồ sơ'), icon: Icons.person_outline),
+                title: Text('Profile'), icon: Icons.person_outline),
             TitledNavigationBarItem(
-                title: Text('Cài đặt'), icon: Icons.settings),
+                title: Text('Settings'), icon: Icons.settings),
           ]),
       floatingActionButton: Padding (
         padding: const EdgeInsets.only(bottom: 5.0),
@@ -114,7 +114,7 @@ class Schedule extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 16),
+                                fontSize: 14),
                           ),
                         ),
                       ),
@@ -125,7 +125,7 @@ class Schedule extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'Productive Day, Sourav',
+                    'Productive days?',
                     style: TextStyle(
                       fontSize: 18.0,
                       color: Colors.grey,
@@ -134,17 +134,16 @@ class Schedule extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'April, 2020',
+                  'Jun, 2021',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
                 ),
               ),
               SizedBox(height: 20.0),
               Container(
-                height: 58.0,
+                height: 80.0,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: days.length,
@@ -201,26 +200,26 @@ class Schedule extends StatelessWidget {
                             children: <Widget>[
                               _dashedText(),
                               TaskContainer(
-                                title: 'Cày Rank',
+                                title: 'Reading',
                                 subtitle:
-                                'Đéo lên được vàng thì sống làm đ j cho nhục thế bạn',
+                                'For ur life',
                                 boxColor: LightColors.kLightYellow2,
                               ),
                               _dashedText(),
                               TaskContainer(
-                                title: 'Ngủ',
+                                title: 'Sleep',
                                 subtitle: 'UwU',
                                 boxColor: LightColors.kLavender,
                               ),
                               TaskContainer(
-                                title: 'Thở',
-                                subtitle: 'Hoặc không',
+                                title: 'Draw',
+                                subtitle: 'Something ye why not',
                                 boxColor: LightColors.kPalePink,
                               ),
                               TaskContainer(
-                                title: 'Ăn',
+                                title: 'Web develop',
                                 subtitle:
-                                'Hêhêhêhêhêhêhêhêhêhêhêhêhêhêhêhêhêhêhê',
+                                'Hey that\'s pretty cool how u do that',
                                 boxColor: LightColors.kLightGreen,
                               ),
                             ],

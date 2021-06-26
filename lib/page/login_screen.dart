@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'ID / SĐT / Email',
+          'ID / Phone number / Email',
           style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Icons.email,
                 color: Colors.white,
               ),
-              hintText: 'Nhập ID / SĐT / Email của bạn',
+              hintText: 'Your ID / Phone number / Email',
               hintStyle: kHintTextStyle,
             ),
           ),
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Mật khẩu',
+          'Password',
           style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Icons.lock,
                 color: Colors.white,
               ),
-              hintText: 'Nhập mật khẩu của bạn',
+              hintText: 'Your password',
               hintStyle: kHintTextStyle,
             ),
           ),
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
         onPressed: () => print('Forgot Password Button Pressed'),
         padding: EdgeInsets.only(right: 0.0),
         child: Text(
-          'Quên mật khẩu?',
+          'Forgot your password?',
           style: kLabelStyle,
         ),
       ),
@@ -130,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           Text(
-            'Nhớ tài khoản',
+            'Remember me',
             style: kLabelStyle,
           ),
         ],
@@ -145,8 +145,8 @@ class _LoginScreenState extends State<LoginScreen> {
       child: RaisedButton(
         elevation: 5.0,
         onPressed: () {
-          if (usernameController.text == "x" &&
-              passwordController.text == "y") {
+          if (usernameController.text == "learnsup" &&
+              passwordController.text == "2021") {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => HomePage()),
@@ -159,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         color: Colors.white,
         child: Text(
-          'Đăng nhập',
+          'Login',
           style: TextStyle(
             color: Color(0xFF527DAA),
             letterSpacing: 1.5,
@@ -211,7 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: <Widget>[
                       SizedBox(height: 30.0),
                       Text(
-                        'Đăng nhập',
+                        'Login',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',

@@ -16,7 +16,7 @@ class _NextProjectState extends State<NextProject> {
   List<Widget> itemsData = [];
 
   void getPostsData() {
-    List<dynamic> responseList = FOOD_DATA;
+    List<dynamic> responseList = projectData;
     List<Widget> listItems = [];
     responseList.forEach((post) {
       listItems.add(Container(
@@ -34,17 +34,17 @@ class _NextProjectState extends State<NextProject> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      post["name"],
+                      post["title"],
                       style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      post["brand"],
+                      post["description"],
                       style: const TextStyle(fontSize: 17, color: Colors.grey),
                     ),
                     SizedBox(height: 4),
                     Text(
-                      "${post["price"]}",
-                      style: const TextStyle(fontSize: 16, color: Colors.black, fontStyle: FontStyle.italic),
+                      "${post["date"]}   ${post["startTime"]}  - trong  ${post["duration"]}",
+                      style: const TextStyle(fontSize: 14, color: Colors.black, fontStyle: FontStyle.italic),
                     ),
                   ],
                 ),
@@ -87,7 +87,7 @@ class _NextProjectState extends State<NextProject> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Text(
-                    "\n Projects quan trọng",
+                    "\n Important Projects",
                     style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20),
                     textAlign: TextAlign.center,
                   ),
@@ -168,7 +168,7 @@ class CategoriesScroller extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        "Học tập",
+                        "Learn",
                         style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
@@ -194,7 +194,7 @@ class CategoriesScroller extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          "Thiết kế web",
+                          "Design web",
                           style: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
@@ -220,7 +220,7 @@ class CategoriesScroller extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        "Ngủ",
+                        "Sleep",
                         style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(

@@ -51,6 +51,29 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  static CircleAvatar clockIcon() {
+    return CircleAvatar(
+      radius: 17.0,
+      backgroundColor: LightColors.kBlue,
+      child: Icon(
+        Icons.access_time_outlined,
+        size: 22.0,
+        color: Colors.white,
+      ),
+    );
+  }
+  static CircleAvatar durationIcon() {
+    return CircleAvatar(
+      radius: 17.0,
+      backgroundColor: LightColors.kBlue,
+      child: Icon(
+        Icons.timer,
+        size: 22.0,
+        color: Colors.white,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -74,13 +97,13 @@ class HomePage extends StatelessWidget {
             }
           },
           items: [
-            TitledNavigationBarItem(title: Text('Trang chủ'), icon: Icons.home),
+            TitledNavigationBarItem(title: Text('Homepage', style: TextStyle(fontSize: 12),), icon: Icons.home),
             TitledNavigationBarItem(
-                title: Text('Lịch trình'), icon: Icons.schedule),
+                title: Text('Schedule'), icon: Icons.schedule),
             TitledNavigationBarItem(
-                title: Text('Hồ sơ'), icon: Icons.person_outline),
+                title: Text('Profile'), icon: Icons.person_outline),
             TitledNavigationBarItem(
-                title: Text('Cài đặt'), icon: Icons.settings),
+                title: Text('Settings'), icon: Icons.settings),
           ]),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 5.0),
@@ -153,7 +176,7 @@ class HomePage extends StatelessWidget {
                               ),
                               Container(
                                 child: Text(
-                                  'Game thủ chuyên nghiệp',
+                                  'Professional bed warmer',
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     fontSize: 16.0,
@@ -236,14 +259,14 @@ class HomePage extends StatelessWidget {
                               ActiveProjectsCard(
                                 cardColor: LightColors.kGreen,
                                 loadingPercent: 0.25,
-                                title: 'Lên vàng',
+                                title: 'Learn',
                                 subtitle: '9 hours progress',
                               ),
                               SizedBox(width: 20.0),
                               ActiveProjectsCard(
                                 cardColor: LightColors.kRed,
                                 loadingPercent: 0.6,
-                                title: 'Ngủ',
+                                title: 'Sleep',
                                 subtitle: '20 hours progress',
                               ),
                             ],
@@ -253,14 +276,14 @@ class HomePage extends StatelessWidget {
                               ActiveProjectsCard(
                                 cardColor: LightColors.kDarkYellow,
                                 loadingPercent: 0.45,
-                                title: 'Thở',
+                                title: 'Draw',
                                 subtitle: '5 hours progress',
                               ),
                               SizedBox(width: 20.0),
                               ActiveProjectsCard(
                                 cardColor: LightColors.kBlue,
                                 loadingPercent: 0.9,
-                                title: 'Ăn',
+                                title: 'App develop',
                                 subtitle: '23 hours progress',
                               ),
                             ],

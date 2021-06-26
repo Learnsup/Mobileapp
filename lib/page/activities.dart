@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:u_w_u/page/subpages/create_new_task_page.dart';
 import 'subpages/done.dart';
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
@@ -8,6 +10,9 @@ import 'package:wave/wave.dart';
 import 'package:wave/config.dart';
 import 'subpages/next_project.dart';
 import 'package:intl/intl.dart';
+import 'subpages/music_player.dart';
+import 'package:external_app_launcher/external_app_launcher.dart';
+import 'consts/constants.dart';
 
 class Background extends StatelessWidget {
   @override
@@ -51,81 +56,84 @@ class CountDownTimer extends StatefulWidget {
 class _CountDownTimerState extends State<CountDownTimer>
     with WidgetsBindingObserver {
   double percent = 0;
-  static int TimeInMin = 25;
-  int TimeInSec = TimeInMin * 60;
-  int TimeInHour;
+  static int TimeInMin = 0;
+  int TimeInSec = 0;
+  int TimeInHour = 0;
+  int TimeInDay = 0;
   Timer timer;
   bool InEvent = false;
+  double SecPercent = 0;
 
-  @override
-  initState() {
-    super.initState();
-    WidgetsBinding.instance.addObserver(this);
-    SchedulerBinding.instance.addPostFrameCallback((_) {
-      DateTime now = DateTime.now();
-      int Hour = int.parse(DateFormat('HH').format(now));
-      int Min = int.parse(DateFormat('mm').format(now));
-      int Sec = int.parse(DateFormat('ss').format(now));
+  void getProject() {
+    print("getPr");
+    DateTime now = DateTime.now();
+    int Hour = int.parse(DateFormat('HH').format(now));
+    int Min = int.parse(DateFormat('mm').format(now));
+    int Sec = int.parse(DateFormat('ss').format(now));
 
-      void diff(int Cnt) {
-        if (Cnt == 10 || Cnt == 17)
-          InEvent = true;
-        else
-          InEvent = false;
+    String nextProjectDate = projectData[0]["date"];
+    String nextProjectDay = nextProjectDate.substring(0, 2);
+    String nextProjectMonth = nextProjectDate.substring(5, 7);
+    String nextProjectYear = nextProjectDate.substring(10, 14);
 
-        TimeInHour = Cnt - Hour;
-        TimeInMin = 60 - Min;
-        TimeInSec = 60 - Sec;
+    String nextProjectTime = projectData[0]["startTime"];
+    String nextProjectHour = nextProjectTime.substring(0, 2);
+    String nextProjectMins = nextProjectTime.substring(3, 5);
 
-        if (TimeInSec != 60) {
-          TimeInHour -= 1;
-          TimeInMin -= 1;
-        } else {
-          TimeInSec = 0;
-          if (TimeInMin != 60) {
-            TimeInHour -= 1;
-          } else
-            TimeInMin = 0;
-        }
-      }
+    DateTime nextProjectDateTime = DateTime.parse(
+        "$nextProjectYear-$nextProjectMonth-$nextProjectDay\T$nextProjectHour:$nextProjectMins");
+    Duration duration = nextProjectDateTime.difference(now);
 
-      if (7 <= Hour && Hour < 10)
-        diff(10);
-      else if (10 <= Hour && Hour < 14)
-        diff(14);
-      else if (14 <= Hour && Hour < 17)
-        diff(17);
-      else if (0 <= Hour && Hour < 7)
-        diff(7);
-      else
-        diff(31);
+    String twoDigits(int n) => n.toString().padLeft(2, "0");
+    String twoDigitHours = twoDigits(duration.inHours.remainder(24));
+    String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
+    String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
 
-      double SecPercent =
-          (1 / (TimeInHour * 3600 + TimeInMin * 60 + TimeInSec));
-      timer = Timer.periodic(Duration(seconds: 1), (timer) {
-        setState(() {
-          if (TimeInHour >= 0) {
-            TimeInSec--;
-            if (TimeInSec == -1) {
-              TimeInMin--;
-              TimeInSec = 59;
-              if (TimeInMin == -1) {
-                TimeInMin = 59;
-                TimeInHour--;
-              }
-            }
-            if (percent < 1) {
-              percent += SecPercent;
-            } else {
-              percent = 1;
-            }
-          } else {
-            percent = 1;
-            timer.cancel();
-          }
-        });
-      });
-    });
+    TimeInDay = duration.inDays;
+    TimeInHour = int.parse(twoDigitHours);
+    TimeInMin = int.parse(twoDigitMinutes);
+    TimeInSec = int.parse(twoDigitSeconds);
+
+    SecPercent = (1 /
+        (TimeInDay * 62400 + TimeInHour * 3600 + TimeInMin * 60 + TimeInSec));
+  }
+
+  void getDuration() {
+    print("getDr");
+
+    DateTime now = DateTime.now();
+    int realdate = (int.parse(DateFormat('dd').format(now)) - 20) * 24 * 3600 +
+        int.parse(DateFormat('hh').format(now)) * 3600 +
+        int.parse(DateFormat('mm').format(now)) * 60 +
+        int.parse(DateFormat('ss').format(now));
+
+    int tmprealdate = projectData[0]["realdate"];
+    String tmpduration = projectData[0]["duration"];
+    int diff = (tmprealdate +
+            int.parse(tmpduration.substring(0, tmpduration.length - 1)) * 60) -
+        realdate;
+
+    Duration duration = Duration(seconds: diff);
+
+    String twoDigits(int n) => n.toString().padLeft(2, "0");
+    String twoDigitHours = twoDigits(duration.inHours.remainder(24));
+    String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
+    String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
+
+    TimeInDay = duration.inDays;
+    TimeInHour = int.parse(twoDigitHours);
+    TimeInMin = int.parse(twoDigitMinutes);
+    TimeInSec = int.parse(twoDigitSeconds);
+    print("nope $diff");
+    print(realdate);
+    print(tmprealdate +
+        int.parse(tmpduration.substring(0, tmpduration.length - 1)) * 60);
+    print(TimeInHour);
+    print(TimeInMin);
+    print(TimeInSec);
+
+    SecPercent = (1 /
+        (TimeInDay * 62400 + TimeInHour * 3600 + TimeInMin * 60 + TimeInSec));
   }
 
   @override
@@ -135,16 +143,152 @@ class _CountDownTimerState extends State<CountDownTimer>
   }
 
   @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
+  initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      DateTime now = DateTime.now();
+      int tmprealdate;
+      String tmpduration;
+      int realdate =
+          (int.parse(DateFormat('dd').format(now)) - 20) * 24 * 3600 +
+              int.parse(DateFormat('hh').format(now)) * 3600 +
+              int.parse(DateFormat('mm').format(now)) * 60;
+
+      for (int i = 0; i < projectData.length; i++) {
+        tmprealdate = projectData[i]["realdate"];
+        tmpduration = projectData[i]["duration"];
+        print("hey $tmpduration");
+        print(InEvent);
+        print(realdate);
+        print(tmprealdate);
+        print(tmpduration);
+        print(int.parse(tmpduration.substring(0, tmpduration.length - 1)) * 60);
+        if ((tmprealdate <= realdate &&
+            realdate <=
+                tmprealdate +
+                    int.parse(
+                            tmpduration.substring(0, tmpduration.length - 1)) *
+                        60)) {
+          print("help");
+          InEvent = true;
+          break;
+        }
+      }
+      if (InEvent)
+        getDuration();
+      else
+        getProject();
+
+      timer = Timer.periodic(Duration(seconds: 1), (timer) {
+        setState(() {
+          if (TimeInDay >= 0) {
+            TimeInSec--;
+            if (percent + SecPercent <= 1 && percent + SecPercent >= 0)
+              percent += SecPercent;
+            else
+              percent = 0;
+            if (TimeInSec < 0) {
+              TimeInMin--;
+              TimeInSec = 59;
+              if (TimeInMin < 0) {
+                TimeInMin = 59;
+                TimeInHour--;
+                if (TimeInHour < 0) {
+                  TimeInHour = 23;
+                  TimeInDay--;
+                }
+              }
+            }
+          } else {
+            print(InEvent);
+            print(TimeInDay);
+            if (!InEvent) {
+              getDuration();
+            } else {
+              getProject();
+              projectData.removeAt(0);
+            }
+            InEvent = !InEvent;
+          }
+        });
+      });
+    });
+  }
+
+  @override
+  Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
     switch (state) {
       case AppLifecycleState.resumed:
         print("app in resumed");
         break;
       case AppLifecycleState.inactive:
         print("app in inactive");
+        await LaunchApp.openApp(
+            androidPackageName: 'idk.bro.u_w_u', openStore: false);
         break;
       case AppLifecycleState.paused:
         print("app in paused");
+        await LaunchApp.openApp(
+            androidPackageName: 'idk.bro.u_w_u', openStore: false);
+        showDialog(
+          context: context,
+          builder: (context) {
+            return Dialog(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  alignment: Alignment.topCenter,
+                  children: [
+                    Container(
+                      height: 300,
+                      width: 300,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 70, 10, 10),
+                        child: Column(
+                          children: [
+                            Text(
+                              'You are in\nworking mode',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 22),
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            ButtonTheme(
+                                minWidth: 100,
+                                height: 60,
+                                child: RaisedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  color: Colors.blue,
+                                  child: Text(
+                                    'Okay',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20),
+                                  ),
+                                ))
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                        top: -60,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.red,
+                          radius: 50,
+                          child: Icon(
+                            Icons.error_outline,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                        )),
+                  ],
+                ));
+          },
+        );
         break;
       case AppLifecycleState.detached:
         print("app in detached");
@@ -188,11 +332,12 @@ class _CountDownTimerState extends State<CountDownTimer>
                       textAlign: TextAlign.center,
                       text: TextSpan(children: <TextSpan>[
                         TextSpan(
-                            text: '$TimeInHour : $TimeInMin : $TimeInSec \n',
+                            text:
+                                '${TimeInDay != 0 ? "$TimeInDay days\n" : ""} $TimeInHour : $TimeInMin : $TimeInSec \n',
                             style: TextStyle(fontSize: 32)),
                         TextSpan(
                             text:
-                                '${InEvent ? 'Đang làm việc' : 'Cho đến lúc làm việc'}',
+                                '${InEvent ? 'Working' : 'Till next project'}',
                             style: TextStyle(
                               fontSize: 20,
                             )),
@@ -225,7 +370,7 @@ class _CountDownTimerState extends State<CountDownTimer>
                                         Text(
                                           "Study Time",
                                           style: TextStyle(
-                                            fontSize: 25.0,
+                                            fontSize: 20.0,
                                           ),
                                         ),
                                         SizedBox(
@@ -233,7 +378,7 @@ class _CountDownTimerState extends State<CountDownTimer>
                                         ),
                                         Text(
                                           "25",
-                                          style: TextStyle(fontSize: 60.0),
+                                          style: TextStyle(fontSize: 50.0),
                                         )
                                       ],
                                     ),
@@ -244,7 +389,7 @@ class _CountDownTimerState extends State<CountDownTimer>
                                         Text(
                                           "Break Time",
                                           style: TextStyle(
-                                            fontSize: 25.0,
+                                            fontSize: 20.0,
                                           ),
                                         ),
                                         SizedBox(
@@ -252,7 +397,7 @@ class _CountDownTimerState extends State<CountDownTimer>
                                         ),
                                         Text(
                                           "5",
-                                          style: TextStyle(fontSize: 60.0),
+                                          style: TextStyle(fontSize: 50.0),
                                         )
                                       ],
                                     ),
@@ -285,7 +430,7 @@ class _ActivitiesState extends State<Activities>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -295,6 +440,7 @@ class _ActivitiesState extends State<Activities>
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Color(0xFF545D68)),
           onPressed: () {
+            audioPlayer.stop();
             Navigator.pop(context);
           },
         ),
@@ -317,11 +463,11 @@ class _ActivitiesState extends State<Activities>
         padding: EdgeInsets.only(left: 20.0, right: 20.0),
         children: <Widget>[
           SizedBox(height: 15.0),
-          Text('Làm việc',
+          Text('Working mode',
               style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 42.0,
-                  fontWeight: FontWeight.bold)),
+                fontFamily: 'Varela',
+                fontSize: 42.0,
+              )),
           SizedBox(height: 15.0),
           TabBar(
               controller: _tabController,
@@ -340,7 +486,7 @@ class _ActivitiesState extends State<Activities>
                       )),
                 ),
                 Tab(
-                  child: Text('Kế tiếp',
+                  child: Text('Music player',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Varela',
@@ -348,7 +494,15 @@ class _ActivitiesState extends State<Activities>
                       )),
                 ),
                 Tab(
-                  child: Text('Đã hoàn thành',
+                  child: Text('Next project',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 21.0,
+                      )),
+                ),
+                Tab(
+                  child: Text('Done tasks',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Varela',
@@ -357,10 +511,11 @@ class _ActivitiesState extends State<Activities>
                 )
               ]),
           Container(
-              height: MediaQuery.of(context).size.height - 50.0,
+              height: MediaQuery.of(context).size.height - 20.0,
               width: double.infinity,
               child: TabBarView(controller: _tabController, children: [
                 CountDownTimer(),
+                MusicPlayer(),
                 NextProject(),
                 Done(),
               ]))

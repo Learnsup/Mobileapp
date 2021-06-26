@@ -1,5 +1,6 @@
 
 List<String> days = [
+  'Sat',
   'Sun',
   'Mon',
   'Tue',
@@ -13,13 +14,8 @@ List<String> days = [
   'Wed',
   'Thu',
   'Fri',
-  'Sat'
 ];
 List<String> dates = [
-  '22',
-  '23',
-  '24',
-  '25',
   '26',
   '27',
   '28',
@@ -29,7 +25,11 @@ List<String> dates = [
   '1',
   '2',
   '3',
-  '4'
+  '4',
+  '5',
+  '6',
+  '7',
+  '8'
 ];
 
 

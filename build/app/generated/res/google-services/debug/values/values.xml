@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">208148483393-ta8jc6vl0bilrdms0n3pv26kl2f6qu86.apps.googleusercontent.com</string>
-    <string name="firebase_database_url" translatable="false">https://khkt-hehe.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">208148483393</string>
-    <string name="google_api_key" translatable="false">AIzaSyBG8xh5Tz-eixafI1EGOAUwTvtKpFmzH2k</string>
-    <string name="google_app_id" translatable="false">1:208148483393:android:a8847c3d0cbae8230965c0</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBG8xh5Tz-eixafI1EGOAUwTvtKpFmzH2k</string>
-    <string name="google_storage_bucket" translatable="false">khkt-hehe.appspot.com</string>
-    <string name="project_id" translatable="false">khkt-hehe</string>
+    <string name="default_web_client_id" translatable="false">649646519260-kt4kd84btsuumirhbcgb7s1ldg750059.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">649646519260</string>
+    <string name="google_api_key" translatable="false">AIzaSyBJALcgdtXujZUWEsm_TJRifEVuoIVaCik</string>
+    <string name="google_app_id" translatable="false">1:649646519260:android:cc0939b07de1932dae5519</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBJALcgdtXujZUWEsm_TJRifEVuoIVaCik</string>
+    <string name="google_storage_bucket" translatable="false">learnsup-d78e8.appspot.com</string>
+    <string name="project_id" translatable="false">learnsup-d78e8</string>
 </resources>
